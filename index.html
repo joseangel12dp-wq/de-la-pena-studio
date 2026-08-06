@@ -57,15 +57,15 @@
     #problema [style*="repeat(3"], #paquetes [style*="repeat(3"] { grid-template-columns: 1fr !important; }
     [style*="grid-template-columns:1fr 1.1fr"] { grid-template-columns: 1fr !important; }
     #paquetes [style*="scale(1.03)"] { transform: none !important; }
-    #trabajos [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
+    #trabajos-grid { grid-template-columns: 1fr !important; }
   }
   @media (max-width: 768px) {
     /* Trabajos reales */
     #trabajos a.dlp-card { padding: 24px 20px !important; }
-    #trabajos [style*="height:210px"] { height: 150px !important; }
-    #trabajos [style*="margin-top:22px;display:flex"] { flex-direction: column !important; gap: 10px !important; align-items: flex-start !important; }
+    #trabajos .dlp-work-img { height: 150px !important; }
+    #trabajos .dlp-work-foot { flex-direction: column !important; gap: 10px !important; align-items: flex-start !important; }
     #trabajos h3 { font-size: 28px !important; }
-    #trabajos [style*="width:260px;height:260px"] { width: 180px !important; height: 180px !important; top: -46px !important; right: -28px !important; }
+    #trabajos .dlp-work-blob { width: 180px !important; height: 180px !important; top: -46px !important; right: -28px !important; }
     /* Mantenimiento */
     #mant-panel { padding: 26px 22px !important; border-radius: 22px !important; }
     #mant-cards { grid-template-columns: 1fr !important; }
@@ -280,26 +280,26 @@
     <div style="position:relative;z-index:2;max-width:1180px;margin:0 auto;">
       <div class="rv" style="opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;font-family:'Bebas Neue';font-size:16px;letter-spacing:4px;color:#9B2242;">TRABAJOS REALES</div>
       <h2 class="rv" style="opacity:0;transform:translateY(30px);transition:opacity .7s ease .06s,transform .7s ease .06s;margin:10px 0 56px;font-size:clamp(34px,5.4vw,64px);line-height:1;font-weight:800;">Ya están <span style="font-family:'Caveat';color:#9B2242;font-weight:700;font-size:1.2em;">vendiendo</span></h2>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
+      <div id="trabajos-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:30px;">
         <a href="https://dimex-dxqb.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ver tienda online de DIMEX, abre en nueva pestaña" class="rv dlp-card" style="opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease, box-shadow .3s ease;position:relative;display:block;background:#F7ECEF;border-radius:26px;padding:40px 34px;overflow:hidden;color:inherit;">
-          <div style="position:absolute;top:-70px;right:-40px;width:260px;height:260px;border-radius:63% 37% 55% 45% / 48% 62% 38% 52%;background:#9B2242;opacity:.9;"></div>
+          <div class="dlp-work-blob" style="position:absolute;top:-70px;right:-40px;width:260px;height:260px;border-radius:63% 37% 55% 45% / 48% 62% 38% 52%;background:#9B2242;opacity:.9;"></div>
           <div style="position:relative;z-index:2;">
-            <div style="height:210px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#EBD8DD,#9B2242);box-shadow:0 20px 40px rgba(74,14,34,.14);">
+            <div class="dlp-work-img" style="height:210px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#EBD8DD,#9B2242);box-shadow:0 20px 40px rgba(74,14,34,.14);">
               <img src="./img/dimex.png" alt="Captura de la tienda online de DIMEX, papelería en Maracaibo" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';">
             </div>
-            <div style="margin-top:22px;display:flex;justify-content:space-between;align-items:flex-end;">
+            <div class="dlp-work-foot" style="margin-top:22px;display:flex;justify-content:space-between;align-items:flex-end;">
               <div><h3 style="margin:0;font-family:'Bebas Neue';font-size:34px;letter-spacing:1px;color:#4A0E22;">DIMEX</h3><p style="margin:4px 0 0;color:rgba(13,15,13,.6);font-size:14px;">Papelería en Maracaibo</p></div>
               <span aria-hidden="true" style="background:#fff;color:#4A0E22;padding:10px 18px;border-radius:999px;font-weight:800;font-size:13px;">Abrir ↗</span>
             </div>
           </div>
         </a>
         <a href="https://crealive3d.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Ver tienda online de Crealive3D, abre en nueva pestaña" class="rv dlp-card" style="opacity:0;transform:translateY(40px);transition:opacity .7s ease .12s,transform .7s ease .12s, box-shadow .3s ease;position:relative;display:block;background:#4A0E22;border-radius:26px;padding:40px 34px;overflow:hidden;color:#fff;">
-          <div style="position:absolute;top:-70px;right:-40px;width:260px;height:260px;border-radius:52% 48% 41% 59% / 63% 37% 63% 37%;background:#F2C14E;opacity:.9;"></div>
+          <div class="dlp-work-blob" style="position:absolute;top:-70px;right:-40px;width:260px;height:260px;border-radius:52% 48% 41% 59% / 63% 37% 63% 37%;background:#F2C14E;opacity:.9;"></div>
           <div style="position:relative;z-index:2;">
-            <div style="height:210px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#5C1830,#4E1128);box-shadow:0 20px 40px rgba(0,0,0,.3);">
+            <div class="dlp-work-img" style="height:210px;border-radius:16px;overflow:hidden;background:linear-gradient(135deg,#5C1830,#4E1128);box-shadow:0 20px 40px rgba(0,0,0,.3);">
               <img src="./img/crealive3d.png" alt="Captura de la tienda online de Crealive3D, impresión 3D personalizada" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;" onerror="this.style.display='none';">
             </div>
-            <div style="margin-top:22px;display:flex;justify-content:space-between;align-items:flex-end;">
+            <div class="dlp-work-foot" style="margin-top:22px;display:flex;justify-content:space-between;align-items:flex-end;">
               <div><h3 style="margin:0;font-family:'Bebas Neue';font-size:34px;letter-spacing:1px;color:#fff;">CREALIVE3D</h3><p style="margin:4px 0 0;color:rgba(255,255,255,.65);font-size:14px;">Impresión 3D personalizada</p></div>
               <span aria-hidden="true" style="background:#F2C14E;color:#3d2c00;padding:10px 18px;border-radius:999px;font-weight:800;font-size:13px;">Abrir ↗</span>
             </div>
