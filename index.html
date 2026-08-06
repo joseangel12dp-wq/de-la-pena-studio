@@ -56,7 +56,6 @@
     #solucion [style*="repeat(4"] { grid-template-columns: 1fr 1fr !important; }
     #problema [style*="repeat(3"], #paquetes [style*="repeat(3"] { grid-template-columns: 1fr !important; }
     [style*="grid-template-columns:1fr 1.1fr"] { grid-template-columns: 1fr !important; }
-    #paquetes [style*="scale(1.03)"] { transform: none !important; }
     #trabajos-grid { grid-template-columns: 1fr !important; }
   }
   @media (max-width: 768px) {
@@ -317,46 +316,54 @@
       <h2 class="rv" style="opacity:0;transform:translateY(30px);transition:opacity .7s ease .06s,transform .7s ease .06s;text-align:center;margin:10px 0 60px;font-size:clamp(34px,5.4vw,64px);line-height:1;font-weight:800;">Elige tu <span style="font-family:'Caveat';color:#9B2242;font-weight:700;font-size:1.2em;">plan</span></h2>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch;">
         <div class="rv dlp-card" style="opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease, box-shadow .3s ease;background:#fff;border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;">
-          <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:1px;color:#4A0E22;">ESENCIAL</div>
-          <p style="margin:8px 0 20px;font-size:14px;color:rgba(13,15,13,.6);line-height:1.5;">Para arrancar ya con lo justo y necesario.</p>
-          <div style="display:flex;align-items:flex-end;gap:6px;margin-bottom:24px;"><span style="font-size:42px;font-weight:800;color:#4A0E22;">$—</span><span style="color:rgba(13,15,13,.5);font-size:13px;margin-bottom:8px;">pago único</span></div>
+          <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:1px;color:#4A0E22;">BÁSICO</div>
+          <p style="margin:8px 0 20px;font-size:14px;color:rgba(13,15,13,.6);line-height:1.5;">Tu catálogo funcionando desde el primer día.</p>
+          <div style="display:flex;align-items:flex-end;gap:6px;margin-bottom:24px;"><span style="font-size:42px;font-weight:800;color:#4A0E22;" data-price="basico"></span><span style="color:rgba(13,15,13,.5);font-size:13px;margin-bottom:8px;">pago único</span></div>
           <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:rgba(13,15,13,.72);">
-            <div>✓ Catálogo hasta 20 productos</div>
-            <div>✓ Pedidos a tu WhatsApp</div>
-            <div>✓ Tu marca y colores</div>
-            <div>✓ Listo en pocos días</div>
+            <div>✓ Hasta 30 productos cargados por mí</div>
+            <div>✓ Catálogo con categorías y buscador</div>
+            <div>✓ Carrito de compras</div>
+            <div>✓ Pedido directo a WhatsApp, ya escrito</div>
+            <div>✓ Panel para crear, borrar y editar productos, precios, stock y fotos</div>
+            <div>✓ Dominio propio y certificado de seguridad</div>
+            <div>✓ Capacitación incluida</div>
           </div>
           <a href="#form" style="margin-top:auto;padding-top:26px;"><span style="display:block;text-align:center;border:1.5px solid #9B2242;color:#9B2242;padding:13px;border-radius:999px;font-weight:800;font-size:14px;">Quiero este</span></a>
         </div>
 
-        <div class="rv dlp-card" style="opacity:0;transform:translateY(40px);transition:opacity .7s ease .1s,transform .7s ease .1s, box-shadow .3s ease;background:#4A0E22;color:#fff;border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;position:relative;box-shadow:0 30px 60px rgba(74,14,34,.25);transform:translateY(40px) scale(1.03);">
+        <div class="rv dlp-card" style="opacity:0;transform:translateY(40px);transition:opacity .7s ease .1s,transform .7s ease .1s, box-shadow .3s ease;background:#4A0E22;color:#fff;border:2px solid #F2C14E;border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;position:relative;box-shadow:0 30px 60px rgba(74,14,34,.25);">
           <div style="position:absolute;top:20px;right:20px;background:#F2C14E;color:#3d2c00;font-weight:800;font-size:11px;padding:6px 12px;border-radius:999px;letter-spacing:.5px;">MÁS ELEGIDO</div>
           <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:1px;">COMPLETO</div>
-          <p style="margin:8px 0 20px;font-size:14px;color:rgba(255,255,255,.7);line-height:1.5;">La tienda que crece contigo.</p>
-          <div style="display:flex;align-items:flex-end;gap:6px;margin-bottom:24px;"><span style="font-size:42px;font-weight:800;color:#fff;">$—</span><span style="color:rgba(255,255,255,.55);font-size:13px;margin-bottom:8px;">pago único</span></div>
+          <p style="margin:8px 0 20px;font-size:14px;color:rgba(255,255,255,.7);line-height:1.5;">Una tienda que se ve más grande de lo que es.</p>
+          <div style="display:flex;align-items:flex-end;gap:6px;margin-bottom:24px;"><span style="font-size:42px;font-weight:800;color:#fff;" data-price="completo"></span><span style="color:rgba(255,255,255,.55);font-size:13px;margin-bottom:8px;">pago único</span></div>
           <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:rgba(255,255,255,.82);">
-            <div><span style="color:#F2C14E;">✓</span> Productos ilimitados</div>
-            <div><span style="color:#F2C14E;">✓</span> Categorías y buscador</div>
-            <div><span style="color:#F2C14E;">✓</span> Diseño a medida de tu marca</div>
-            <div><span style="color:#F2C14E;">✓</span> Capacitación 1 a 1</div>
-            <div><span style="color:#F2C14E;">✓</span> Mantenimiento incluido</div>
+            <div><span style="color:#F2C14E;">✓</span> Hasta 60 productos cargados</div>
+            <div><span style="color:#F2C14E;">✓</span> Todo lo del plan Básico</div>
+            <div><span style="color:#F2C14E;">✓</span> Sección de más vendidos en la página principal</div>
+            <div><span style="color:#F2C14E;">✓</span> Ofertas y descuentos que manejas tú</div>
+            <div><span style="color:#F2C14E;">✓</span> Banners editables desde el panel</div>
+            <div><span style="color:#F2C14E;">✓</span> Página "Nosotros" con la historia de tu marca</div>
           </div>
           <a href="#form" style="margin-top:auto;padding-top:26px;"><span style="display:block;text-align:center;background:#9B2242;color:#fff;padding:13px;border-radius:999px;font-weight:800;font-size:14px;">Quiero este</span></a>
         </div>
 
         <div class="rv dlp-card" style="opacity:0;transform:translateY(40px);transition:opacity .7s ease .2s,transform .7s ease .2s, box-shadow .3s ease;background:#fff;border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;">
-          <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:1px;color:#4A0E22;">A MEDIDA</div>
-          <p style="margin:8px 0 20px;font-size:14px;color:rgba(13,15,13,.6);line-height:1.5;">¿Algo especial? Lo diseñamos juntos.</p>
-          <div style="display:flex;align-items:flex-end;gap:6px;margin-bottom:24px;"><span style="font-size:42px;font-weight:800;color:#4A0E22;">$—</span><span style="color:rgba(13,15,13,.5);font-size:13px;margin-bottom:8px;">según proyecto</span></div>
+          <div style="font-family:'Bebas Neue';font-size:26px;letter-spacing:1px;color:#4A0E22;">PREMIUM</div>
+          <p style="margin:8px 0 20px;font-size:14px;color:rgba(13,15,13,.6);line-height:1.5;">Para cuando el catálogo ya no cabe en una sola vista.</p>
+          <div style="display:flex;align-items:flex-end;gap:6px;margin-bottom:24px;"><span style="font-size:42px;font-weight:800;color:#4A0E22;" data-price="premium"></span><span style="color:rgba(13,15,13,.5);font-size:13px;margin-bottom:8px;">pago único</span></div>
           <div style="display:flex;flex-direction:column;gap:12px;font-size:14px;color:rgba(13,15,13,.72);">
-            <div>✓ Funciones a tu medida</div>
-            <div>✓ Integraciones especiales</div>
-            <div>✓ Varias marcas o sedes</div>
-            <div>✓ Acompañamiento cercano</div>
+            <div>✓ Hasta 100 productos cargados</div>
+            <div>✓ Todo lo del plan Completo</div>
+            <div>✓ Variantes de producto: talla, color, presentación</div>
+            <div>✓ Página de contacto con formulario</div>
+            <div>✓ Galería de fotos del negocio</div>
+            <div>✓ Historial de pedidos en el panel</div>
+            <div>✓ Productos relacionados en cada ficha</div>
           </div>
-          <a href="#form" style="margin-top:auto;padding-top:26px;"><span style="display:block;text-align:center;border:1.5px solid #9B2242;color:#9B2242;padding:13px;border-radius:999px;font-weight:800;font-size:14px;">Hablemos</span></a>
+          <a href="#form" style="margin-top:auto;padding-top:26px;"><span style="display:block;text-align:center;border:1.5px solid #9B2242;color:#9B2242;padding:13px;border-radius:999px;font-weight:800;font-size:14px;">Quiero este</span></a>
         </div>
       </div>
+      <p class="rv" style="opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;text-align:center;margin:36px auto 0;font-size:15px;color:rgba(13,15,13,.62);">¿Necesitas algo más grande? Proyectos a medida — <a href="#form" style="color:#9B2242;font-weight:800;">hablemos</a>.</p>
     </div>
   </section>
 
@@ -370,6 +377,10 @@
             <div style="font-family:'Bebas Neue';font-size:16px;letter-spacing:4px;color:#F2C14E;">MANTENIMIENTO INCLUIDO</div>
             <h2 style="margin:10px 0 14px;font-size:clamp(30px,4.4vw,48px);line-height:1.05;font-weight:800;">No la lanzo y desaparezco</h2>
             <p style="margin:0;color:rgba(255,255,255,.82);font-size:16px;line-height:1.65;max-width:420px;">Tu tienda sigue cuidada mes a mes, sin que tú tengas que preocuparte por nada técnico.</p>
+            <div style="margin-top:24px;">
+              <div style="display:flex;align-items:baseline;gap:9px;"><span data-price="mant-mensual" style="font-family:'Bebas Neue';font-size:46px;color:#F2C14E;letter-spacing:1px;line-height:1;"></span><span style="font-size:15px;font-weight:700;color:rgba(255,255,255,.9);">al mes</span></div>
+              <div style="margin-top:7px;font-size:14px;color:rgba(255,255,255,.8);">o <span data-price="mant-anual" style="font-weight:800;color:#fff;"></span> al año <span style="color:#F2C14E;font-weight:800;">— dos meses gratis</span></div>
+            </div>
           </div>
           <div id="mant-cards" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
             <div style="background:rgba(255,255,255,.12);border-radius:16px;padding:18px;"><div style="font-weight:800;font-size:15px;margin-bottom:4px;">Servidor activo</div><div style="font-size:13px;color:rgba(255,255,255,.75);">Tu web en línea siempre, rápida y estable.</div></div>
@@ -457,10 +468,24 @@
 }">
 const WA_NUM = '584246049228';
 
+// Precios — única fuente de verdad. Cámbialos aquí y se reflejan en las tarjetas.
+const PRICES = {
+  basico: '$500',
+  completo: '$650',
+  premium: '$850',
+  'mant-mensual': '$30',
+  'mant-anual': '$300',
+};
+
 class Component extends DCLogic {
   componentDidMount() {
     const root = document.getElementById('dlp');
     if (!root) return;
+
+    // inyectar precios desde PRICES
+    Object.keys(PRICES).forEach((k) => {
+      root.querySelectorAll('[data-price="' + k + '"]').forEach((el) => { el.textContent = PRICES[k]; });
+    });
 
     // reveal on scroll
     const reveal = (el) => {
