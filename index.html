@@ -328,7 +328,7 @@
             <div>✓ Dominio propio y certificado de seguridad</div>
             <div>✓ Capacitación incluida</div>
           </div>
-          <a href="#form" style="margin-top:auto;padding-top:26px;"><span style="display:block;text-align:center;border:1.5px solid #9B2242;color:#9B2242;padding:13px;border-radius:999px;font-weight:800;font-size:14px;">Quiero este</span></a>
+          <a href="#form" data-plan="basico" onClick="{{ onPlan }}" style="margin-top:auto;padding-top:26px;"><span style="display:block;text-align:center;border:1.5px solid #9B2242;color:#9B2242;padding:13px;border-radius:999px;font-weight:800;font-size:14px;">Quiero este</span></a>
         </div>
 
         <div class="rv dlp-card" style="opacity:0;transform:translateY(40px);transition:opacity .7s ease .1s,transform .7s ease .1s, box-shadow .3s ease;background:#4A0E22;color:#fff;border:2px solid #F2C14E;border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;position:relative;box-shadow:0 30px 60px rgba(74,14,34,.25);">
@@ -344,7 +344,7 @@
             <div><span style="color:#F2C14E;">✓</span> Banners editables desde el panel</div>
             <div><span style="color:#F2C14E;">✓</span> Página "Nosotros" con la historia de tu marca</div>
           </div>
-          <a href="#form" style="margin-top:auto;padding-top:26px;"><span style="display:block;text-align:center;background:#9B2242;color:#fff;padding:13px;border-radius:999px;font-weight:800;font-size:14px;">Quiero este</span></a>
+          <a href="#form" data-plan="completo" onClick="{{ onPlan }}" style="margin-top:auto;padding-top:26px;"><span style="display:block;text-align:center;background:#9B2242;color:#fff;padding:13px;border-radius:999px;font-weight:800;font-size:14px;">Quiero este</span></a>
         </div>
 
         <div class="rv dlp-card" style="opacity:0;transform:translateY(40px);transition:opacity .7s ease .2s,transform .7s ease .2s, box-shadow .3s ease;background:#fff;border-radius:24px;padding:34px 30px;display:flex;flex-direction:column;">
@@ -360,7 +360,7 @@
             <div>✓ Historial de pedidos en el panel</div>
             <div>✓ Productos relacionados en cada ficha</div>
           </div>
-          <a href="#form" style="margin-top:auto;padding-top:26px;"><span style="display:block;text-align:center;border:1.5px solid #9B2242;color:#9B2242;padding:13px;border-radius:999px;font-weight:800;font-size:14px;">Quiero este</span></a>
+          <a href="#form" data-plan="premium" onClick="{{ onPlan }}" style="margin-top:auto;padding-top:26px;"><span style="display:block;text-align:center;border:1.5px solid #9B2242;color:#9B2242;padding:13px;border-radius:999px;font-weight:800;font-size:14px;">Quiero este</span></a>
         </div>
       </div>
       <p class="rv" style="opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease;text-align:center;margin:36px auto 0;font-size:15px;color:rgba(13,15,13,.62);">¿Necesitas algo más grande? Proyectos a medida — <a href="#form" style="color:#9B2242;font-weight:800;">hablemos</a>.</p>
@@ -403,6 +403,7 @@
       <p class="rv" style="opacity:0;transform:translateY(30px);transition:opacity .7s ease .12s,transform .7s ease .12s;text-align:center;margin:0 auto 44px;max-width:480px;color:rgba(255,255,255,.85);font-size:15px;">Ocho preguntas cortas. Al enviar se abre WhatsApp con todo escrito — tú solo le das a mandar.</p>
 
       <form onSubmit="{{ onSubmit }}" class="rv" style="opacity:0;transform:translateY(30px);transition:opacity .7s ease .18s,transform .7s ease .18s;background:#fff;border-radius:26px;padding:clamp(26px,4vw,44px);color:#0D0F0D;box-shadow:0 30px 70px rgba(74,14,34,.28);">
+        <div id="dlp-plan-elegido" style="display:none;margin-bottom:22px;background:#F7ECEF;border:1.5px solid #9B2242;color:#4A0E22;font-weight:800;font-size:14px;padding:13px 16px;border-radius:12px;"></div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
           <label style="display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:800;">1 · Nombre del negocio
             <input id="dlp-negocio" type="text" placeholder="Ej: Tienda de Ana" autocomplete="organization" enterkeyhint="next" style="font-family:inherit;font-size:15px;padding:13px 15px;border:1.5px solid rgba(13,15,13,.14);border-radius:12px;font-weight:500;"></label>
@@ -476,6 +477,9 @@ const PRICES = {
   'mant-mensual': '$30',
   'mant-anual': '$300',
 };
+
+// Nombres visibles de los planes (para el mensaje y el badge del formulario)
+const PLAN_LABELS = { basico: 'Básico', completo: 'Completo', premium: 'Premium' };
 
 class Component extends DCLogic {
   componentDidMount() {
@@ -631,6 +635,17 @@ class Component extends DCLogic {
       picks[group.getAttribute('data-field')] = btn.getAttribute('data-value');
     };
 
+    const onPlan = (e) => {
+      const key = e.currentTarget.getAttribute('data-plan');
+      if (!key) return;
+      this._plan = key;
+      const badge = document.getElementById('dlp-plan-elegido');
+      if (badge) {
+        badge.textContent = 'Plan elegido: ' + (PLAN_LABELS[key] || key) + ' — ' + (PRICES[key] || '');
+        badge.style.display = 'block';
+      }
+    };
+
     const val = (id) => {
       const el = document.getElementById(id);
       return el && el.value ? el.value.trim() : '';
@@ -661,9 +676,14 @@ class Component extends DCLogic {
         firstErr.focus();
         return;
       }
+      const planKey = this._plan || '';
+      const planTxt = planKey ? (PLAN_LABELS[planKey] || planKey) + ' (' + (PRICES[planKey] || '') + ')' : '';
       const L = [
         '¡Hola De la Peña Studio! Quiero mi tienda web 🌱',
         '',
+      ];
+      if (planTxt) L.push('Plan elegido: ' + planTxt, '');
+      L.push(
         '1. Negocio: ' + (val('dlp-negocio') || '—'),
         '2. Qué vende: ' + (val('dlp-vende') || '—'),
         '3. Productos: ' + (val('dlp-cantidad') || '—'),
@@ -671,14 +691,14 @@ class Component extends DCLogic {
         '5. Estilo: ' + (picks.estilo || '—'),
         '6. Colores: ' + (val('dlp-colores') || '—'),
         '7. Referencia: ' + (val('dlp-referencia') || '—'),
-        '8. Mi nombre: ' + (val('dlp-nombre') || '—'),
-      ];
+        '8. Mi nombre: ' + (val('dlp-nombre') || '—')
+      );
       const url = 'https://wa.me/' + WA_NUM + '?text=' + encodeURIComponent(L.join('\n'));
       const w = window.open(url, '_blank');
       if (!w) window.location.href = url;
     };
 
-    return { onPick, onSubmit };
+    return { onPick, onPlan, onSubmit };
   }
 }
 </script>
