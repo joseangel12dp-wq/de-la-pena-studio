@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+<title>Crealive — De la Peña Studio</title>
+<meta name="description" content="Crealive: web e impresión 3D personalizada. Un proyecto de De la Peña Studio.">
+<link rel="canonical" href="https://de-la-pena-studio.vercel.app/crealive">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_VE">
+<meta property="og:title" content="Crealive — De la Peña Studio">
+<meta property="og:description" content="Crealive: web e impresión 3D personalizada. Un proyecto de De la Peña Studio.">
+<meta property="og:image" content="https://de-la-pena-studio.vercel.app/img/og-cover.jpg">
+<meta property="og:url" content="https://de-la-pena-studio.vercel.app/crealive">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Crealive — De la Peña Studio">
+<meta name="twitter:description" content="Crealive: web e impresión 3D personalizada. Un proyecto de De la Peña Studio.">
+<meta name="twitter:image" content="https://de-la-pena-studio.vercel.app/img/og-cover.jpg">
+<meta name="theme-color" content="#070708">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiM5QjIyNDIiLz48dGV4dCB4PSIxNiIgeT0iMjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBmb250LXNpemU9IjIyIiBmb250LXdlaWdodD0iYm9sZCI+UDwvdGV4dD48L3N2Zz4=">
+<link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@300;400;500;600&family=Geist+Mono:wght@400;500&family=Caveat:wght@700&family=Bebas+Neue&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<script src="motion.js"></script>
+<style>
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#070708;color:#F4EFEA}
+  body{font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#F4EFEA;text-decoration:none}
+  a:hover{color:#FFFFFF}
+  ::selection{background:#9B2242;color:#fff}
+  @keyframes dlpDrift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(7%,-5%) scale(1.15)}}
+  @keyframes dlpDrift2{0%,100%{transform:translate(0,0) scale(1.1)}50%{transform:translate(-8%,6%) scale(.95)}}
+  @keyframes dlpLine{0%{transform:scaleY(0);transform-origin:50% 0}45%{transform:scaleY(1);transform-origin:50% 0}55%{transform:scaleY(1);transform-origin:50% 100%}100%{transform:scaleY(0);transform-origin:50% 100%}}
+  @keyframes dlpBlink{0%,100%{opacity:1}50%{opacity:.25}}
+  @media (max-width:899px){
+    [data-desk]{display:none!important}
+    [data-stack]{grid-template-columns:minmax(0,1fr)!important}
+    #hero-copy{top:auto!important;bottom:6vh!important;transform:none!important;max-width:none!important;right:20px!important}
+    [data-hcard] [data-tilt]{height:62vw!important}
+  }
+  @media (min-width:900px){[data-mob]{display:none!important}}
+</style>
+</helmet>
+<div id="page" style="position:relative;background:#070708;color:#F4EFEA;min-height:100vh;overflow-x:clip;">
+  <div id="dlp-progress" style="position:fixed;top:0;left:0;right:0;height:2px;background:#9B2242;transform:scaleX(0);transform-origin:0 50%;z-index:300;"></div>
+  <nav id="dlp-nav" style="position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px clamp(18px,4vw,56px);border-bottom:1px solid transparent;transition:background .5s ease, border-color .5s ease, transform .7s cubic-bezier(.16,1,.3,1);">
+    <a href="/" style="display:flex;align-items:center;gap:12px;color:#F4EFEA;">
+      <span style="width:34px;height:34px;border-radius:50%;background:#9B2242;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Caveat',cursive;font-size:24px;font-weight:700;line-height:1;">P</span>
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:2px;line-height:1;padding-top:2px;">DE LA PEÑA STUDIO</span>
+    </a>
+    <div data-desk="" style="display:flex;align-items:center;gap:clamp(18px,2.4vw,36px);font-size:14px;">
+      <a data-link="" href="/crealive" style="color:rgba(244,239,234,.7);padding:6px 0;transition:color .3s;">Crealive</a>
+      <a data-link="" href="/trovare" style="color:rgba(244,239,234,.7);padding:6px 0;transition:color .3s;">Trovare</a>
+      <a data-link="" href="/todo-bajo-control" style="color:rgba(244,239,234,.7);padding:6px 0;transition:color .3s;">Todo bajo control</a>
+      <a data-link="" href="/acerca" style="color:rgba(244,239,234,.7);padding:6px 0;transition:color .3s;">Acerca de mí</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <a data-magnetic="" href="https://wa.me/584246049228?text=Hola%20Jos%C3%A9%20%C3%81ngel%2C%20quiero%20hablar%20de%20un%20proyecto" target="_blank" style="background:#9B2242;color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;font-weight:500;">Hablemos</a>
+      <button data-mob="" data-menu-toggle="" type="button" aria-label="Menú" style="width:44px;height:44px;border-radius:50%;border:1px solid rgba(244,239,234,.2);background:transparent;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer;padding:0;">
+        <span data-ml1="" style="display:block;width:16px;height:1.5px;background:#F4EFEA;transition:transform .5s cubic-bezier(.16,1,.3,1);"></span>
+        <span data-ml2="" style="display:block;width:16px;height:1.5px;background:#F4EFEA;transition:transform .5s cubic-bezier(.16,1,.3,1);"></span>
+      </button>
+    </div>
+  </nav>
+  <div id="dlp-menu" style="position:fixed;inset:0;z-index:190;background:#0B0A0B;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:90px 24px 40px;clip-path:inset(0 0 100% 0);pointer-events:none;transition:clip-path .9s cubic-bezier(.16,1,.3,1);">
+    <a data-mi="" href="/" style="font-family:'Playfair Display',Georgia,serif;font-size:52px;line-height:1.1;opacity:0;transform:translateY(40px);transition:opacity .8s, transform .9s cubic-bezier(.16,1,.3,1);">Inicio</a>
+    <a data-mi="" href="/crealive" style="font-family:'Playfair Display',Georgia,serif;font-size:52px;line-height:1.1;opacity:0;transform:translateY(40px);transition:opacity .8s, transform .9s cubic-bezier(.16,1,.3,1);">Crealive</a>
+    <a data-mi="" href="/trovare" style="font-family:'Playfair Display',Georgia,serif;font-size:52px;line-height:1.1;opacity:0;transform:translateY(40px);transition:opacity .8s, transform .9s cubic-bezier(.16,1,.3,1);">Trovare</a>
+    <a data-mi="" href="/todo-bajo-control" style="font-family:'Playfair Display',Georgia,serif;font-size:52px;line-height:1.1;opacity:0;transform:translateY(40px);transition:opacity .8s, transform .9s cubic-bezier(.16,1,.3,1);">Todo bajo control</a>
+    <a data-mi="" href="/acerca" style="font-family:'Playfair Display',Georgia,serif;font-size:52px;line-height:1.1;font-style:italic;color:#E07A93;opacity:0;transform:translateY(40px);transition:opacity .8s, transform .9s cubic-bezier(.16,1,.3,1);">Acerca de mí</a>
+    <div data-mi="" style="margin-top:36px;font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.16em;color:rgba(244,239,234,.55);opacity:0;transform:translateY(40px);transition:opacity .8s, transform .9s cubic-bezier(.16,1,.3,1);">+58 424 604 9228</div>
+  </div>
+
+  
+  <header style="position:relative;padding:clamp(120px,18vh,190px) clamp(20px,5vw,72px) 0;">
+    <div data-parallax="0.15" style="position:absolute;top:-24vw;right:-20vw;width:72vw;height:72vw;border-radius:50%;background:radial-gradient(circle,rgba(79,163,199,.22),rgba(79,163,199,0) 62%);pointer-events:none;"></div>
+    <div style="position:relative;max-width:1400px;margin:0 auto;">
+      <div style="margin-bottom:clamp(24px,3vw,40px);"><div data-reveal="scale" style="flex:0 0 auto;width:clamp(76px,7vw,108px);height:clamp(76px,7vw,108px);border-radius:24%;overflow:hidden;background:#141416;border:1px solid rgba(244,239,234,.12);box-shadow:0 18px 50px rgba(79,163,199,.3);"><image-slot id="crealive-icono" shape="rect" placeholder="Icono" style="width:100%;height:100%;display:block;"></image-slot></div></div>
+      <h1 data-split="" data-delay=".1" style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(72px,14vw,230px);line-height:.88;letter-spacing:-.04em;"><span style="display:inline-block;overflow:hidden;vertical-align:top;padding:0 .08em .1em 0;margin-bottom:-.1em;"><span data-w="">Crealive</span></span></h1>
+      <div data-stack="" style="display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:28px;align-items:end;margin-top:clamp(28px,4vw,56px);">
+        <p data-reveal="up" data-delay=".35" style="margin:0;max-width:560px;font-size:clamp(17px,1.5vw,21px);line-height:1.55;font-weight:300;color:rgba(244,239,234,.82);text-wrap:pretty;">La web de una empresa de impresión 3D personalizada: un catálogo claro para mostrar cada pieza y recibir pedidos sin perderse en el chat.</p>
+        <div data-reveal="up" data-delay=".45" style="display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start;"><a data-magnetic="" href="https://crealive3d.vercel.app/" target="_blank" rel="noopener noreferrer" style="background:#F4EFEA;color:#070708;padding:15px 26px;border-radius:12px;font-size:15px;font-weight:500;">Visitar Crealive ↗</a></div>
+      </div>
+    </div>
+  </header>
+
+  <section style="padding:clamp(48px,6vw,90px) clamp(20px,5vw,72px) 0;">
+    <div style="max-width:1400px;margin:0 auto;position:relative;">
+      <div style="position:absolute;top:10%;left:5%;right:5%;bottom:-5%;background:rgba(79,163,199,.5);filter:blur(90px);border-radius:60px;opacity:.5;pointer-events:none;"></div>
+      <div data-reveal="clip" style="position:relative;height:min(58vw,82vh);border-radius:28px;overflow:hidden;background:#141416;border:1px solid rgba(244,239,234,.08);">
+        <div data-zoom="" style="position:absolute;inset:0;"><image-slot id="crealive-hero" shape="rect" placeholder="Imagen principal — Crealive" style="width:100%;height:100%;display:block;"></image-slot></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,6vw,80px) clamp(20px,5vw,72px) 0;">
+    <div data-stack="" style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;">
+      <div data-reveal="up" data-delay="0.00" style="padding-top:22px;border-top:1px solid rgba(244,239,234,.12);"><div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,234,.5);">Cliente</div><div style="margin-top:10px;font-size:17px;">Crealive3D</div></div>
+      <div data-reveal="up" data-delay="0.08" style="padding-top:22px;border-top:1px solid rgba(244,239,234,.12);"><div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,234,.5);">Servicio</div><div style="margin-top:10px;font-size:17px;">Diseño y desarrollo web</div></div>
+      <div data-reveal="up" data-delay="0.16" style="padding-top:22px;border-top:1px solid rgba(244,239,234,.12);"><div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,234,.5);">Plataforma</div><div style="margin-top:10px;font-size:17px;">Web, pensada para móvil</div></div>
+      <div data-reveal="up" data-delay="0.24" style="padding-top:22px;border-top:1px solid rgba(244,239,234,.12);"><div style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,234,.5);">Estado</div><div style="margin-top:10px;font-size:17px;">En línea</div></div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(90px,12vw,170px) clamp(20px,5vw,72px);">
+    <div data-stack="" style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:clamp(24px,5vw,80px);">
+      <div data-desk=""></div>
+      <p data-scrub="" style="margin:0;font-family:'Playfair Display',Georgia,serif;font-size:clamp(30px,3.8vw,58px);line-height:1.14;letter-spacing:-.015em;">Cada pieza es distinta y los pedidos llegaban mezclados entre mensajes. Hacía falta un lugar donde el cliente viera todo lo posible y pidiera lo suyo con los detalles claros.</p>
+    </div>
+    <div data-stack="" style="max-width:1400px;margin:clamp(60px,8vw,110px) auto 0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:clamp(24px,5vw,80px);">
+      <div data-desk=""></div>
+      <p data-reveal="up" style="margin:0;max-width:780px;font-size:clamp(18px,1.6vw,24px);line-height:1.6;font-weight:300;color:rgba(244,239,234,.82);text-wrap:pretty;">Diseñamos un catálogo visual y rápido en el móvil, donde cada producto se explica solo y el pedido llega ordenado directamente a WhatsApp. Crealive administra sus productos sin depender de nadie.</p>
+    </div>
+  </section>
+
+  <section style="padding:0 clamp(20px,5vw,72px);">
+    <div data-stack="" style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(14px,2vw,28px);">
+      <div data-reveal="clip" style="position:relative;height:min(60vw,760px);min-height:300px;border-radius:24px;overflow:hidden;background:#141416;"><div data-zoom="" style="position:absolute;inset:0;"><image-slot id="crealive-g1" shape="rect" placeholder="Detalle 1 — Crealive" style="width:100%;height:100%;display:block;"></image-slot></div></div>
+      <div style="display:grid;grid-template-rows:1fr 1fr;gap:clamp(14px,2vw,28px);">
+        <div data-reveal="clip" data-delay=".1" style="position:relative;min-height:240px;border-radius:24px;overflow:hidden;background:#141416;"><div data-zoom="" style="position:absolute;inset:0;"><image-slot id="crealive-g2" shape="rect" placeholder="Detalle 2 — Crealive" style="width:100%;height:100%;display:block;"></image-slot></div></div>
+        <div data-reveal="clip" data-delay=".2" style="position:relative;min-height:240px;border-radius:24px;overflow:hidden;background:#141416;"><div data-zoom="" style="position:absolute;inset:0;"><image-slot id="crealive-g3" shape="rect" placeholder="Detalle 3 — Crealive" style="width:100%;height:100%;display:block;"></image-slot></div></div>
+      </div>
+    </div>
+    <div data-reveal="clip" style="max-width:1400px;margin:clamp(14px,2vw,28px) auto 0;position:relative;height:min(50vw,640px);min-height:260px;border-radius:24px;overflow:hidden;background:#141416;"><div data-zoom="" style="position:absolute;inset:0;"><image-slot id="crealive-g4" shape="rect" placeholder="Vista completa — Crealive" style="width:100%;height:100%;display:block;"></image-slot></div></div>
+  </section>
+
+  <section style="padding:clamp(90px,12vw,170px) clamp(20px,5vw,72px);">
+    <div data-stack="" style="max-width:1400px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(32px,5vw,80px);align-items:start;">
+      <div>
+        <div data-desk=""></div>
+        <h2 data-split="" style="margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(42px,5vw,80px);line-height:.94;letter-spacing:-.025em;"><span style="display:inline-block;overflow:hidden;vertical-align:top;padding:0 .08em .1em 0;margin-bottom:-.1em;"><span data-w="">Del</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding:0 .08em .1em 0;margin-bottom:-.1em;"><span data-w="">boceto</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding:0 .08em .1em 0;margin-bottom:-.1em;"><span data-w="" style="font-style:italic;color:#E07A93;">al</span></span> <span style="display:inline-block;overflow:hidden;vertical-align:top;padding:0 .08em .1em 0;margin-bottom:-.1em;"><span data-w="" style="font-style:italic;color:#E07A93;">lanzamiento.</span></span></h2>
+      </div>
+      <div style="border-bottom:1px solid rgba(244,239,234,.12);">
+        <div data-row="" data-reveal="up" style="position:relative;display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:20px;align-items:center;padding:clamp(22px,2.6vw,34px) 16px;border-top:1px solid rgba(244,239,234,.12);overflow:hidden;color:#F4EFEA;">
+          <div data-row-fill="" style="position:absolute;inset:0;background:#9B2242;transform:scaleY(0);transform-origin:50% 100%;transition:transform .7s cubic-bezier(.16,1,.3,1);"></div>
+          <span style="position:relative;font-family:'Geist Mono',monospace;font-size:12px;color:rgba(244,239,234,.6);">01</span>
+          <span data-row-title="" style="position:relative;font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,3vw,44px);line-height:1.05;letter-spacing:-.015em;transition:transform .7s cubic-bezier(.16,1,.3,1);">Diseño visual de la web</span>
+          <span data-row-arrow="" style="position:relative;font-size:22px;transition:transform .6s cubic-bezier(.16,1,.3,1);">→</span>
+        </div>
+        <div data-row="" data-reveal="up" style="position:relative;display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:20px;align-items:center;padding:clamp(22px,2.6vw,34px) 16px;border-top:1px solid rgba(244,239,234,.12);overflow:hidden;color:#F4EFEA;">
+          <div data-row-fill="" style="position:absolute;inset:0;background:#9B2242;transform:scaleY(0);transform-origin:50% 100%;transition:transform .7s cubic-bezier(.16,1,.3,1);"></div>
+          <span style="position:relative;font-family:'Geist Mono',monospace;font-size:12px;color:rgba(244,239,234,.6);">02</span>
+          <span data-row-title="" style="position:relative;font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,3vw,44px);line-height:1.05;letter-spacing:-.015em;transition:transform .7s cubic-bezier(.16,1,.3,1);">Catálogo de productos</span>
+          <span data-row-arrow="" style="position:relative;font-size:22px;transition:transform .6s cubic-bezier(.16,1,.3,1);">→</span>
+        </div>
+        <div data-row="" data-reveal="up" style="position:relative;display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:20px;align-items:center;padding:clamp(22px,2.6vw,34px) 16px;border-top:1px solid rgba(244,239,234,.12);overflow:hidden;color:#F4EFEA;">
+          <div data-row-fill="" style="position:absolute;inset:0;background:#9B2242;transform:scaleY(0);transform-origin:50% 100%;transition:transform .7s cubic-bezier(.16,1,.3,1);"></div>
+          <span style="position:relative;font-family:'Geist Mono',monospace;font-size:12px;color:rgba(244,239,234,.6);">03</span>
+          <span data-row-title="" style="position:relative;font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,3vw,44px);line-height:1.05;letter-spacing:-.015em;transition:transform .7s cubic-bezier(.16,1,.3,1);">Pedidos directos a WhatsApp</span>
+          <span data-row-arrow="" style="position:relative;font-size:22px;transition:transform .6s cubic-bezier(.16,1,.3,1);">→</span>
+        </div>
+        <div data-row="" data-reveal="up" style="position:relative;display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:20px;align-items:center;padding:clamp(22px,2.6vw,34px) 16px;border-top:1px solid rgba(244,239,234,.12);overflow:hidden;color:#F4EFEA;">
+          <div data-row-fill="" style="position:absolute;inset:0;background:#9B2242;transform:scaleY(0);transform-origin:50% 100%;transition:transform .7s cubic-bezier(.16,1,.3,1);"></div>
+          <span style="position:relative;font-family:'Geist Mono',monospace;font-size:12px;color:rgba(244,239,234,.6);">04</span>
+          <span data-row-title="" style="position:relative;font-family:'Playfair Display',Georgia,serif;font-size:clamp(26px,3vw,44px);line-height:1.05;letter-spacing:-.015em;transition:transform .7s cubic-bezier(.16,1,.3,1);">Gestión de productos para el cliente</span>
+          <span data-row-arrow="" style="position:relative;font-size:22px;transition:transform .6s cubic-bezier(.16,1,.3,1);">→</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a data-next="" href="/trovare" data-cursor="Ir" style="display:block;position:relative;overflow:hidden;padding:clamp(80px,12vw,170px) clamp(20px,5vw,72px);border-top:1px solid rgba(244,239,234,.08);color:#F4EFEA;">
+    <div data-parallax="0.12" style="position:absolute;top:-30%;right:-10%;width:60vw;height:60vw;border-radius:50%;background:radial-gradient(circle,rgba(217,137,74,.2),rgba(217,137,74,0) 62%);pointer-events:none;"></div>
+    <div style="position:relative;max-width:1400px;margin:0 auto;">
+      <div data-reveal="up" style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,239,234,.55);">Siguiente proyecto — 02</div>
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-top:20px;flex-wrap:wrap;">
+        <span data-split="" style="font-family:'Playfair Display',Georgia,serif;font-size:clamp(44px,8.2vw,148px);line-height:.9;letter-spacing:-.035em;"><span style="display:inline-block;overflow:hidden;vertical-align:top;padding:0 .08em .1em 0;margin-bottom:-.1em;"><span data-w="">Trovare</span></span></span>
+        <span data-reveal="up" style="font-size:clamp(32px,4vw,64px);line-height:1;">→</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- FOOTER / CTA -->
+  <footer id="contacto" data-spot="" style="position:relative;overflow:hidden;padding:clamp(100px,15vw,200px) clamp(20px,5vw,72px) 36px;background:radial-gradient(720px circle at var(--mx,72%) var(--my,30%),rgba(155,34,66,.28),rgba(155,34,66,0) 60%),#070708;border-top:1px solid rgba(244,239,234,.08);">
+    <div style="max-width:1400px;margin:0 auto;">
+      <div data-desk=""></div>
+      <h2 data-split="" style="margin:22px 0 0;font-family:'Playfair Display',Georgia,serif;font-weight:400;font-size:clamp(44px,8vw,140px);line-height:.92;letter-spacing:-.03em;">
+        <span style="display:block;">
+          <span style="display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .1em 0;margin-bottom:-.1em;"><span data-w="">¿Tienes</span></span>
+          <span style="display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .1em 0;margin-bottom:-.1em;"><span data-w="">una</span></span>
+          <span style="display:inline-block;overflow:hidden;vertical-align:top;padding:0 .06em .1em 0;margin-bottom:-.1em;"><span data-w="">idea?</span></span>
+        </span>
+        <span style="display:block;">
+          <span style="display:inline-block;overflow:hidden;vertical-align:top;padding:0 .08em .1em 0;margin-bottom:-.1em;"><span data-w="" style="font-style:italic;color:#E07A93;">Hagámosla real.</span></span>
+        </span>
+      </h2>
+      <div data-stack="" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;margin-top:56px;">
+        <p data-reveal="up" style="margin:0;max-width:440px;font-size:17px;line-height:1.65;font-weight:300;color:rgba(244,239,234,.75);">Cuéntame qué tienes en mente. Te respondo personalmente y, si encaja, empezamos.</p>
+        <a data-magnetic="" data-cursor="Hablar" href="https://wa.me/584246049228?text=Hola%20Jos%C3%A9%20%C3%81ngel%2C%20quiero%20hablar%20de%20un%20proyecto" target="_blank" style="width:168px;height:168px;border-radius:50%;background:#9B2242;color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-size:15px;line-height:1.3;padding:24px;font-weight:500;">Escríbeme por WhatsApp</a>
+      </div>
+      <div style="margin-top:clamp(70px,10vw,130px);padding-top:28px;border-top:1px solid rgba(244,239,234,.1);display:flex;flex-wrap:wrap;gap:22px 36px;justify-content:space-between;align-items:center;">
+        <a href="/" style="display:flex;align-items:center;gap:10px;">
+          <span style="width:28px;height:28px;border-radius:50%;background:#9B2242;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Caveat',cursive;font-size:20px;font-weight:700;line-height:1;">P</span>
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;line-height:1;padding-top:2px;">DE LA PEÑA STUDIO</span>
+        </a>
+        <div style="display:flex;flex-wrap:wrap;gap:22px;font-size:14px;">
+          <a href="/crealive" style="color:rgba(244,239,234,.7);">Crealive</a>
+          <a href="/trovare" style="color:rgba(244,239,234,.7);">Trovare</a>
+          <a href="/todo-bajo-control" style="color:rgba(244,239,234,.7);">Todo bajo control</a>
+          <a href="/acerca" style="color:rgba(244,239,234,.7);">Acerca de mí</a>
+        </div>
+        <div style="font-family:'Geist Mono',monospace;font-size:12px;letter-spacing:.1em;color:rgba(244,239,234,.5);">+58 424 604 9228 · © 2026</div>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    const go = () => {
+      if (window.DLPMotion) this._off = window.DLPMotion.init(document.getElementById('page'), { cursor: true });
+      else this._t = setTimeout(go, 40);
+    };
+    go();
+  }
+  componentWillUnmount() { clearTimeout(this._t); if (this._off) this._off(); }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
